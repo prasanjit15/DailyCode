@@ -1,0 +1,26 @@
+class Solution {
+public:
+    void findans(string digits, vector<string> mapping, string curr, int index, vector<string> &result){
+        if(index == digits.length()){
+            result.push_back(curr);
+            return;
+        }
+        
+        //now, convert the digits as it is in string into individual integer so as to return the string present in the map at that index and store that string in letter
+        string letter = mapping[digits[index] - '0'];
+        
+        for(int i = 0; i<letter.size(); i++){
+            findans(digits, mapping, curr + letter[i], index + 1, result);
+        }
+    }
+    
+    vector<string> letterCombinations(string digits) {
+        vector<string> result;
+        
+        vector<string> mapping{"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        
+        findans(digits, mapping, "", 0, result);
+        
+        return result;
+    }
+};
