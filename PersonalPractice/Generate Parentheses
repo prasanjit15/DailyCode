@@ -1,0 +1,22 @@
+class Solution {
+public:
+    void backtrack(vector<string> &result, string ans, int open, int close, int n){
+        if(ans.length() == n*2){
+            result.push_back(ans);
+            return;
+        }
+        
+        if(open < n)backtrack(result, ans + "(", open + 1, close, n);
+        if(close < open)backtrack(result, ans + ")", open, close+1, n);
+    }    
+    
+    
+    
+    vector<string> generateParenthesis(int n) {
+        vector<string> result;
+        
+        backtrack(result,"",0 , 0, n);
+        
+        return result;
+    }
+};
