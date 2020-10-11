@@ -3,5 +3,14 @@
 1. stoi --> converts strings to integers.
 2. to_string --> converts to string.
 3. next_permutation --> finds the next permutation.
-4. to check if negative ans will be there in case of divsion or multiplication we can use XOR function and XOR both the numbers i.e., [if((A<0) ^ (B<0)) return result = -result]
-5. 
+4. 
+
+
+
+
+
+
+
+***************************************************************************************************************************
+#Coding basics
+1. To check if negative ans will be there in case of divsion or multiplication we can use XOR function and XOR both the numbers i.e., [if((A<0) ^ (B<0)) return result = -result]
