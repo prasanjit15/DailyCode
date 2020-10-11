@@ -1,0 +1,6 @@
+#C++ Inbuilt Functions:
+
+1. stoi --> converts strings to integers.
+2. to_string --> converts to string.
+3. next_permutation --> finds the next permutation.
+4. 
