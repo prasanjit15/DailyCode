@@ -14,3 +14,4 @@
 ***************************************************************************************************************************
 #Coding basics
 1. To check if negative ans will be there in case of divsion or multiplication we can use XOR function and XOR both the numbers i.e., [if((A<0) ^ (B<0)) return result = -result]
+2.
