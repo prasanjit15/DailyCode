@@ -18,7 +18,7 @@
 2. [ a - 'a'] to bring the ASCII of a to 0 similarly replace a (not 'a') with other letters to get their ASCII from 0. Similarly add 'a' to bring back the actual ACII code. 
 3. To check the size of a 2d matrix "xl" :
   for getting total size  ----> xl.size();
-  for getting only the columns size  -----> xl[0].size();
+  for getting only the columns size or the number of columns  -----> xl[0].size();
 4.
 
 ****************************************************************************************************************************
