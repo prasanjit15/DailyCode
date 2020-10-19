@@ -1,0 +1,15 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <cstudio>
+
+using namespace std;
+
+int main(){
+
+//below two lines makes execution faster
+ios_base::sync_with_studio(false);
+cin.tie(NULL);
+
+
+return 0;
+}
