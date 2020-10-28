@@ -10,7 +10,8 @@ how to use it:
 refer problem ---> "Simplify Path" in +--'daily code/personal practice'--+ repo
 ------------------------------------------------------------------------------------------------------------------------------------
 6. string_name.substr(i, k) ---> where i os the looping variable and k is the length of the substring required. "substr" is used to generate all the substring starting from a certain point with a definite length.
-7. 
+7. getline(cin, str) ----> getline() function is used to accept strings with a space in between them, str is the string where the input is stored.
+8.
 
 
 
