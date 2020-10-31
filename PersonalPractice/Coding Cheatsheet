@@ -13,7 +13,8 @@ refer problem ---> "Simplify Path" in +--'daily code/personal practice'--+ repo
 7. getline(cin, str) ----> getline() function is used to accept strings with a space in between them, str is the string where the input is stored.
 8. memset(name_of_array_or_string, Value_to_be_put_in_all_places, sizeof(name_of_string_or_array)) --> This helps to initialize an array with desired values. 
    Note:- for int arrays can only be initialised with 0 or -1 using this. char arrays can be initialised with any char, etc...
-9. 
+9. str_name.erase(remove(str_name.begin(), str_name.end(), 'A'), str_name.end()); --> remove 'A' from string
+10. 
 
 
 
