@@ -1,0 +1,3 @@
+Offset --> used to specify the number of rows to be skipped before checking the condition.
+fetch --> used to specify the number of rows to return after offset condition i processed, It is mostly used with offset.
+dense_rank() --> check "https://www.sqlservertutorial.net/sql-server-window-functions/sql-server-dense_rank-function/"
