@@ -15,7 +15,7 @@ refer problem ---> "Simplify Path" in +--'daily code/personal practice'--+ repo
    Note:- for int arrays can only be initialised with 0 or -1 using this. char arrays can be initialised with any char, etc...
 9. str_name.erase(remove(str_name.begin(), str_name.end(), 'A'), str_name.end()); --> remove 'A' from string
 10. 
-
+ 
 
 
 
@@ -28,7 +28,10 @@ refer problem ---> "Simplify Path" in +--'daily code/personal practice'--+ repo
   for getting total size  ----> xl.size();
   for getting only the columns size or the number of columns  -----> xl[0].size();
 4. For maximum linked list problem try the two pointer method, let one pointer be slow and another one be fast -----> so keep one as slow->next so as it will proceed one node at a time while other one as fast->next->next so as it will skip the next node to move to its next.
-5. 
+5. in a 2d vector (a.size() = number of rows) and (a[0].size() = number of columns)
+6. // Declaration of a matrix with 3 rows and 4 columns   -->   vector< vector<int> > my_matrix(3,vector<int>(4));
+7. heaps are used where there is anything to find largest or smallest
+8. 
 
 ****************************************************************************************************************************
 #Questions to be practised once again
