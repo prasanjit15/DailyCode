@@ -47,7 +47,7 @@ public:
         }
             parent = childhead;
             childhead = child = NULL;
-    }
+    } 
         return root;
 }
 };
