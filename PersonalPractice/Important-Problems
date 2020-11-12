@@ -7,5 +7,9 @@ LEETCODE
 5. Search a 2d matrix optimally
 6. Happy Number
 7. Find the Duplicate Number --> important for a hidden clue in questiob(i.e., lies in range n)
-8. 
+8. Construct Binary Tree from Preorder and Inorder Traversal
+9. Construct Binary Tree from Postorder and Inorder Traversal
+10. Construct Binary Tree from Level Order Traversal
+11. Construct Binary Tree from Level Order Traversal II
+12. 
  
