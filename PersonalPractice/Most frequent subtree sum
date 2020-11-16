@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int countSum(TreeNode* root,unordered_map<int,int> &m){
+        if(root==NULL)
+            return 0;
+        int sum=root->val + countSum(root->left,m) + countSum(root->right,m);
+        
+        m[sum]++;
+        
+        return sum;
+    }
+    vector<int> findFrequentTreeSum(TreeNode* root) {
+        unordered_map<int,int> m;
+        countSum(root,m);
+        
+        vector<int> ans;
+        
+        int mxFreq=0;
+        
+        for(auto it:m)
+            mxFreq=max(mxFreq,it.second);
+        
+        for(auto it:m){
+            if(it.second==mxFreq)
+                ans.push_back(it.first);
+        }
+        
+        return ans;
+    }
+};
