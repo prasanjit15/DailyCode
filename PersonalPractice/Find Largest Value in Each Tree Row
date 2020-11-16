@@ -1,0 +1,28 @@
+class Solution {
+public:
+    vector<int> largestValues(TreeNode* root) {
+        queue<TreeNode*> todo;
+        vector<int>res;
+        if(!root){
+            return res;
+        }
+        todo.push(root);
+        while(!todo.empty()){
+            int n = todo.size();
+            vector<int> currLevel;
+            for(int i=0; i<n; i++){
+                TreeNode* it = todo.front();
+                todo.pop();
+                currLevel.push_back(it->val);
+                if(it->left){todo.push(it->left);}
+                if(it->right){todo.push(it->right);}
+            }
+            int currMax=currLevel[0];
+            for(auto single : currLevel){
+                currMax = max(currMax, single);
+            }
+            res.push_back(currMax);
+        }
+        return res;
+    }
+};
