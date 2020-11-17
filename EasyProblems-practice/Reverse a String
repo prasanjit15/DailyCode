@@ -1,0 +1,29 @@
+  //Reverse a string
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void swapi(char &c, char &v){
+    char temp;
+
+    temp = c;
+    c = v;
+    v = temp;
+}
+
+int main(){
+    string s;
+    cout<<"Enter the string: ";
+    cin>>s;
+
+    int n = s.length();
+
+    for(int i = 0; i<n/2; i++){
+        swapi(s[i], s[n-i-1]);
+    }
+
+    cout<<s<<endl;
+    
+    return 0;
+}
