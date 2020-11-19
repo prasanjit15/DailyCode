@@ -1,0 +1,62 @@
+class CBTInserter {
+public:
+    
+    queue<TreeNode *> qt; //stores the nodes with right or both left and right node free
+    TreeNode* rootn; //stores the root node so as to give the output directly in the last function
+    
+    CBTInserter(TreeNode* root) {  
+        rootn = root; //assigning the root to the global root variable
+        queue<TreeNode *> q; //local queue for BFS traversal
+        
+        TreeNode * node; //Handle each node for the traversal
+        q.push(root); 
+
+//Simple BFS Traversal
+        while(!q.empty()){
+            node = q.front();
+            q.pop();
+            
+//The below condition checks the conditions of the binary tree and also simultaneously check every node that has a left as NULL mst have a Right as NULL or else it accepts only if right as NULL
+            
+            if(node->right == NULL)
+                qt.push(node);       
+            
+//If left node exists Push it into the local queue 
+            if(node->left)
+                q.push(node->left);
+            
+//If right node exists push it into the local queue
+            if(node->right)
+                q.push(node->right);        
+        }
+    }
+    
+    
+    int insert(int v) {
+        TreeNode* nd = qt.front();
+        TreeNode *newn = new TreeNode(v);
+        
+//If left is NULL then insert the newnode there
+        if(nd->left == NULL)
+            nd->left = newn;
+        
+//If right node is NULL insert it there
+        else if(nd->right == NULL)
+            nd->right = newn;
+
+//If left node is filled and we insert in the right node then the parent has no more spaces to be filled so pop it out
+        if(nd->left != NULL && nd->right != NULL)
+            qt.pop();
+
+//Push the recently created node as we can perform the insert operation over it also        
+        qt.push(newn);
+
+//Return the parent of the newly inserted node
+        return nd->val;
+    }
+    
+    TreeNode* get_root() {
+//Return the root from the globally stored variable
+        return rootn;
+    }
+};
