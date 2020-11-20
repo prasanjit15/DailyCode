@@ -1,0 +1,48 @@
+class Solution {
+public:
+    string decodeString(string s) {
+		//have added comments to make the code self explanatory
+        int n = s.length();
+        string ans = "";
+        
+        stack<int> cnt;      //stack which will keep count of number
+        stack<string> res;   //stack which will keep count of ans string till now;
+    
+        int i = 0;
+        while(i < n) {
+            if(s[i] == '[') {
+                res.push(ans);
+                ans = "";
+                i++;
+            } else if(s[i] == ']') {
+                res.push(ans);
+                ans = "";
+                int times = cnt.top();
+                cnt.pop();
+                string tempstr = res.top();
+                res.pop();
+                
+                for(int k = 0; k < times; k++) ans += tempstr;
+            
+                if(!res.empty()) {
+                    ans = res.top() + ans;
+                    res.pop();    
+                }
+                i++;
+            } else if(s[i] - 'a' >= 0) {
+                //character is a char
+                ans += s[i];
+                i++;
+            } else {
+                string count = "";
+                while(s[i] - '0' >= 0 && s[i] - '0' <= 9) {
+                    count += s[i];
+                    i++;
+                }
+                int temp = stoi(count);        
+                cnt.push(temp);
+            }
+        }
+        return ans;
+    }
+};
