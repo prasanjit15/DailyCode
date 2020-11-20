@@ -1,0 +1,22 @@
+//Multiply with 7 without using *
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int mult(int n){
+    //8n = n<<3
+    return ((n<<3) - n);
+}
+
+int main(){
+    int g;
+    cout<<"Enter the number with which u want to multiply 7: ";
+    cin>>g;
+
+    int h = mult(g);
+
+    cout<<"Result: "<<h<<endl;
+
+    return 0;
+}
