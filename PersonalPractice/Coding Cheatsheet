@@ -15,7 +15,8 @@ refer problem ---> "Simplify Path" in +--'daily code/personal practice'--+ repo
    Note:- for int arrays can only be initialised with 0 or -1 using this. char arrays can be initialised with any char, etc...
 9. str_name.erase(remove(str_name.begin(), str_name.end(), 'A'), str_name.end()); --> remove 'A' from string
 10. vector_name.resise(size, value) ---> changes the vector to a certain size and puts the value in all of its place
-11. 
+11. return {target->val}; ---> When the return type is vector and u want to return a intor anything else, simply enclose it with {}
+12. 
  
 
 
@@ -32,7 +33,12 @@ refer problem ---> "Simplify Path" in +--'daily code/personal practice'--+ repo
 5. in a 2d vector (a.size() = number of rows) and (a[0].size() = number of columns)
 6. // Declaration of a matrix with 3 rows and 4 columns   -->   vector< vector<int> > my_matrix(3,vector<int>(4));
 7. heaps are used where there is anything to find largest or smallest
-8. 
+8. For most of the Vector problems use Recursion, BFS and DFS
+9. For all duplicate finding question in stack array etc... use unordered_map
+10. Map provides auto sorting
+11. Set doesn't store duplicates
+12. For duplicates within the range of an array or linked list use the method of two pointers i.e., one slow and other one fast;
+13.
 
 ****************************************************************************************************************************
 #Questions to be practised once again
