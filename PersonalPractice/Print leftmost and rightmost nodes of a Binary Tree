@@ -1,0 +1,58 @@
+//Print leftmost and rightmost nodes of a Binary Tree
+
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+struct Node 
+{ 
+    int key; 
+    struct Node* left, *right; 
+}; 
+  
+struct Node* newNode(int key) 
+{ 
+    Node* temp = new Node; 
+    temp->key = key; 
+    temp->left = temp->right = NULL; 
+    return (temp); 
+} 
+
+void printCorner(Node *root){ 
+    if(root == NULL)
+        return;
+    
+    queue<Node*> q;
+    q.push(root);
+
+    while(!q.empty()){
+        int n = q.size();
+        for(int i = 0; i<n; i++){
+            Node* temp = q.front();
+            q.pop();
+
+            if(i == 0 || i == n-1)
+                cout<<temp->key<<endl;
+
+            if(temp->left)
+                q.push(temp->left);
+            
+            if(temp->right)
+                q.push(temp->right);
+                
+        }
+    }
+
+}
+
+int main () 
+{ 
+    Node *root =  newNode(15); 
+    root->left = newNode(10); 
+    root->right = newNode(20); 
+    root->left->left = newNode(8); 
+    root->left->right = newNode(12); 
+    root->right->left = newNode(16); 
+    root->right->right = newNode(25); 
+    printCorner(root); 
+    return 0;  
+}
