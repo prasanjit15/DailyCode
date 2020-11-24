@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> pathInZigZagTree(int label) {
+        vector<int> res;
+        if(label == 1)
+            return {1};
+        
+        
+        int level = log2(label); //Formula to get the depth or level where the element is located
+        
+        res.insert(res.begin(), label); //Insert it into result vector
+        level--; //We store the elements from the previous level to the 0th level
+        
+        while(level != 0){
+            label = 3 * pow(2, level) - 1 - label/2; //Formula to get the element for each level
+            res.insert(res.begin(), label); //Insert it into the resultant vector
+            level--;           //Decrease level by 1
+        }
+        res.insert(res.begin(), 1); //As 1 will always be the first element and we didnt included level 0 till now so push 1 to the beginning
+        
+        return res;
+    }
+};
