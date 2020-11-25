@@ -17,7 +17,7 @@ refer problem ---> "Simplify Path" in +--'daily code/personal practice'--+ repo
 10. vector_name.resise(size, value) ---> changes the vector to a certain size and puts the value in all of its place
 11. return {target->val}; ---> When the return type is vector and u want to return a intor anything else, simply enclose it with {}
 12. when there is any kind of path mentioned in a tree problem go for DFS
-13. iswspace() ---> read use in google, but is used to check if white spaces are present in a string
+13. iswspace() and isspace() ---> read use in google, but is used to check if white spaces are present in a string
 14. 
  
 
