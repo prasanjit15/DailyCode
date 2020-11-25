@@ -1,0 +1,24 @@
+//Given an integer number, display all the digits individually one after other in different lines
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int nm;
+    cout<<"Enter the number: ";
+    cin>>nm;
+
+
+    int i = 1;
+
+    while(nm != 0){
+        int cpk = 0;
+        cpk = nm % 10;
+
+        nm = nm/10;
+        cout<<"Num "<<i<<" : "<<cpk<<endl;
+        i++;
+    }
+    return 0;
+}
