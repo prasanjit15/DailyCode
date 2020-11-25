@@ -1,0 +1,21 @@
+//Find the greatest without using if else
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int num1 = 0;
+    int num2 = 0;
+    int num3 = 0;
+    int lar = 0;
+
+    cout<<"Enter num1, num2 and num3: "<<endl;
+    cin>>num1>>num2>>num3;
+
+    (num1>num2)?((num1>num3)? lar = num1 : lar = num3) :((num2 > num3)? lar = num2 : lar = num3);
+
+    cout<<"The largest of 3 is: "<<lar<<endl;
+
+    return 0;
+}
