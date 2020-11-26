@@ -1,0 +1,57 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+        vector<int> rt1;
+        vector<int> rt2;
+        vector<int> ans;
+   
+    void inorder(TreeNode* root, vector<int> &rt){
+        if(!root)
+            return;
+        
+        inorder(root->left, rt);
+        rt.push_back(root->val);
+        inorder(root->right, rt);
+    }
+    
+    
+    vector<int> getAllElements(TreeNode* root1, TreeNode* root2) {
+
+        
+        inorder(root1, rt1);
+        inorder(root2, rt2);
+        
+        int lar = 0;
+        
+        int i = 0;
+        int j = 0;
+        
+        while(i < rt1.size() && j < rt2.size()){
+            if(rt1[i] <= rt2[j]){
+                ans.push_back(rt1[i]);
+                i++;
+            }else{
+                ans.push_back(rt2[j]);
+                    j++;
+            }
+        }
+        
+        while( i < rt1.size())
+            ans.push_back(rt1[i++]);
+        
+        while( j < rt2.size())
+            ans.push_back(rt2[j++]);
+        
+        return ans;
+    }
+};
