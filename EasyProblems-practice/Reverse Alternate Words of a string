@@ -1,0 +1,53 @@
+//Reverse alternate words in a string
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void pushing(string s, vector<string> &st){
+    string tmp = "";
+    int i = 0;
+    int g = 0;
+    int z = s.size();
+    int cnt = 0;
+    s+=" ";
+
+  for(int i=0;i<s.length();i++){
+    if(s[i]==' '){
+        st.push_back(tmp); 
+        tmp="";          
+    }else{
+      tmp=tmp+s[i];
+    }
+    }
+}
+
+int main(){
+    cout<<"Enter the string: ";
+    string s;
+    getline(cin, s);
+
+    vector<string> st;
+    
+    pushing(s, st);
+
+    for(int i = 0; i<st.size(); i++){
+        if((i+1)%2 == 0){
+            string t = st[i];
+            reverse(t.begin(), t.end());
+            t += ' ';
+            st[i] = t; 
+        }else
+            st[i] = st[i]+ ' '; 
+         
+    }
+
+    string res;
+    for(int i = 0; i<=st.size(); i++){
+        res += st[i];     
+    }
+
+    res.pop_back();
+
+    cout<<"Reversed String is: "<<res<<endl;
+    return 0;
+}
