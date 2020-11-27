@@ -1,0 +1,25 @@
+class Solution {
+public:
+    void dfs(TreeNode* root, vector<string> &ans, string res) {
+        string temp = res;
+        temp += 'a'+ root->val;
+        if (root->left) dfs(root->left, ans, temp);
+        if (root->right) dfs(root->right, ans, temp);
+        if (root->left == nullptr && root->right == nullptr) {
+            reverse(temp.begin(), temp.end());
+            ans.push_back(temp);
+        }
+    }
+    string smallestFromLeaf(TreeNode* root) {
+        string res = "";
+        if (root==nullptr) return res;
+        res += root->val+'a';
+        vector<string> ans;
+        if (root->left) dfs(root->left, ans, res);
+        if (root->right) dfs(root->right, ans, res);
+        if (root->left == nullptr && root->right == nullptr) 
+            return res;
+        sort(ans.begin(), ans.end());
+        return ans[0];
+    }
+};
