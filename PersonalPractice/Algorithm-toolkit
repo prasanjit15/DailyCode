@@ -1,6 +1,18 @@
+-----------------------------------------------
++       Algorithms to Read & Practice         +
+-----------------------------------------------
+
 Kadane's Algorithm --> find the maximum sub-array  ---->Algorithm
 N-Queens ---> Read this algorithm
 Morris Traversal ---> Algorithm
+Reservoir Sampling Algorithm
+Activity Selection Problem
+Fractional Knapsack
+0-1 Knapsack
+Dutch National Flag Algorithm
+Travelling Salesman Problem
+
+
 
 -----------------------------
 Find the reverse and transpose of a matrix
@@ -10,6 +22,7 @@ find the storage procedure of graphs i.e., Adjacency List
 -----------------------
 Merge Sort, Insertion Sort, Quick Sort
 -------------------------
+
 Reverse a LL
 Reverse a BST
 finding the mid point of a LL
