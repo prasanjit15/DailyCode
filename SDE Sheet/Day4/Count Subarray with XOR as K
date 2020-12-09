@@ -1,0 +1,19 @@
+int solve(vector<int> &nums, int k){
+  int xorr = 0;
+  map<int, int> fre;
+  int cnt = 0;
+  
+  for(auto num: nums){
+    xorr = xorr^num;
+    
+    if(xorr == k)
+      cnt++;
+     
+    if(fre.find(xorr^k)!= fre.end()){
+      cnt += fre[xorr^k];
+    }
+    
+    fre[xorr] += 1;
+  }
+return cnt;
+}
