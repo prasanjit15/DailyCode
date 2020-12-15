@@ -44,7 +44,7 @@ public:
          
         iter = head;
         Node* ph = new Node(0);
-        Node* copy = ph;
+        Node* copy = ph; 
         
         while(iter != NULL){
             front = iter->next->next;
