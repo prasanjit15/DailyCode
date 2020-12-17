@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+struct meeting{
+    int s;
+    int e;
+};
+
+bool comparator(struct meeting m1, struct meeting m2){
+    return(m1.e < m2.e);
+}
+
+void activ(vector<int> start, vector<int> end, int n){
+
+    struct meeting meet[n];
+    int time;
+
+    for(int i = 0; i<n; i++){
+        meet[i].s = start[i];
+        meet[i].e = end[i];
+    }
+
+    sort(meet, meet+n, comparator);
+    time = meet[0].e;
+
+    cout<<"The selected activities are: "<<endl;
+    cout<<meet[0].s<<"--"<<meet[0].e<<" ";
+
+    for(int i = 1; i<n; i++){
+        if(meet[i].s >= time){
+            cout<<meet[i].s<<"--"<<meet[i].e<<" ";
+            time = meet[i].e;
+        }
+    }
+}
+
+int main(){
+    vector<int> s;
+    vector<int> e;
+    int x, y;
+    int z;
+
+    cout<<"Enter the number of elements you want to enter: ";
+    cin>>z;
+
+    cout<<"Enter the starting and ending times: ";
+
+    for(int i = 0; i<z; i++){
+        cin>>x;
+        cout<<", ";
+        cin>>y;
+        s.push_back(x);
+        e.push_back(y);
+    }
+
+    int n = e.size();
+
+    activ(s, e, n);
+    return 0;
+}
