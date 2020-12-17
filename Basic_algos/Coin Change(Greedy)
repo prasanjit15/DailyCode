@@ -13,7 +13,7 @@ void count_coins(vector<int> coins, int x){
             ans.push_back(coins[i]);
             count++;
         }
-    }
+    } 
 
     cout<<"The number of coins required are: "<<count<<endl;
     cout<<"The coins required are: "<<endl;
