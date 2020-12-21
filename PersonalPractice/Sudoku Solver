@@ -1,0 +1,61 @@
+class Solution {
+public:
+    int N = 9;
+    
+    bool issafe(int row, int column, int num, vector<vector<char>> &board){
+        char nn = num + '0';
+        //rows & column check
+        for(int i = 0; i<N; i++){
+            if(board[i][column] == nn || board[row][i] == nn)
+                return false;
+        }
+        
+        //box
+        int s = sqrt(N);
+        int r = row - row % s;
+        int c = column - column % s;
+        
+        for(int i = 0; i<s;i++){
+            for(int j = 0; j<s; j++){
+                if(board[i + r][j + c] == nn)
+                    return false;
+            }
+        }
+        return true;
+    }
+    
+    bool solve(vector<vector<char>> &board){
+                int i;
+        int j; 
+        int flag = 0;
+        
+        for(i = 0; i<N; i++){
+            for(j = 0; j<N; j++){
+                if(board[i][j] == '.'){
+                    flag = 1;
+                    break;
+                }
+            }
+            if(flag)
+                break;
+        }
+        
+        //edge case -last cell
+        if(i == N || j == N)
+            return true;
+        
+        for(int num = 1; num <= 9; num++){
+            if (issafe(i, j, num, board)){
+                board[i][j] = '0' + num;
+                if(solve(board))
+                    return true;
+            }
+            board[i][j] = '.';
+        }
+        return false;
+    }
+    
+    void solveSudoku(vector<vector<char>>& board) {
+        solve(board);
+    }
+};
