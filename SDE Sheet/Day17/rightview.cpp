@@ -22,7 +22,7 @@ void leftview(struct Node* root, int level, int *maxlevel){
         *maxlevel = level;
     }
 
-    
+    //Just call right first instead of left otherwise similar as leftview
     leftview(root->right, level + 1, maxlevel);
     leftview(root->left, level +1 , maxlevel);
 }
